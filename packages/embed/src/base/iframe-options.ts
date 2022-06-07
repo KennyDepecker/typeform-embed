@@ -3,8 +3,8 @@
 interface StyleString {
   style: string
 }
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 type HTMLIFrameElementWithStyleString = Omit<HTMLIFrameElement, 'style'> & StyleString
-
 export type IframeOptions = {
   iframeProps?: Partial<HTMLIFrameElementWithStyleString>
 }
